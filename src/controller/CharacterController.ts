@@ -92,9 +92,9 @@ export class CharacterController {
         try {
             const idToEdit = req.params.id
 
-            const newId = req.body.value
-            const newName = req.body.value
-            const newOrigin = req.body.value
+            const newId = req.body.id
+            const newName = req.body.name
+            const newOrigin = req.body.origin
     
             if (newId !== undefined) {
                 if (typeof newId !== "string") {
@@ -137,7 +137,7 @@ export class CharacterController {
     
             await characterDatabase.updateCharacter(idToEdit, updatedCharacterDB)
             
-            res.status(200).send(updatedCharacterDB)
+            res.status(201).send(updatedCharacter)
         } catch (error) {
             console.log(error)
     

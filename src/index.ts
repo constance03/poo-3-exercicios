@@ -32,7 +32,7 @@ app.get("/ping", async (req: Request, res: Response) => {
 })
 
 
-app.get("/users", characterController.getCharacters)
-app.post("/users", characterController.newCharacter)
-app.put("/users", characterController.editCharacter)
-app.delete("/users", characterController.deleteCharacter)
+app.get("/characters", characterController.getCharacters)
+app.post("/characters", characterController.newCharacter)
+app.put("/characters/:id", characterController.editCharacter)
+app.delete("/characters/:id", characterController.deleteCharacter)
